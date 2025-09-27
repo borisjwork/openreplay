@@ -50,7 +50,7 @@ class ReactNativeModule(reactContext: ReactApplicationContext) :
       wifiOnly = getBooleanOrDefault(optionsMap, "wifiOnly", true),
     )
 
-    val context = currentActivity as Activity
+    val context = reactApplicationContext.currentActivity as Activity
     OpenReplay.serverURL = serverURL
 
     OpenReplay.start(context, projectKey, options, onStarted = {
